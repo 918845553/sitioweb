@@ -1,1 +1,330 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #F3F4ED; /* Fondo claro */
+}
+
+/* Estilo del Encabezado */
+header {
+    background-color: #1F2937; /* Azul oscuro */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+/* Barra decorativa debajo del encabezado */
+header::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #D4A373; /* Marrón claro */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: #F3F4ED;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #D4A373;
+}
+
+/* Estilos generales para la sección de portafolio */
+.portafolio {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.portafolio h2 {
+    font-size: 2.5rem;
+    color: #1F2937;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+/* Cada sección de slider */
+.portafolio-section {
+    margin-top: 2rem;
+}
+
+.portafolio-section h3 {
+    font-size: 1.8rem;
+    color: #D4A373;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para el slider */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* Botones de navegación */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Footer */
+footer {
+    background-color: #1F2937; /* Fondo oscuro */
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    position: relative;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.2); /* Sombra superior */
+}
+
+footer p {
+    margin: 0;
+    padding-bottom: 0.5rem;
+}
+
+.social-icons {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Aumenta un poco el tamaño al pasar el ratón */
+}
+
+.social-icons img {
+    width: 30px; /* Ajusta el tamaño del icono */
+    height: 30px;
+    filter: invert(100%); /* Hace los iconos blancos en fondo oscuro */
+}
+
+/* Estilos para la página de Sobre Nosotros */
+.sobre-nosotros {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 2.5rem;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.sobre-nosotros h2 {
+    font-size: 2.8rem;
+    color: #1F2937;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.sobre-nosotros p {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.sobre-nosotros h3 {
+    font-size: 2rem;
+    color: #D4A373;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #D4A373;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Diseño para cada bloque de contenido */
+.content-block {
+    background-color: #F9F8F3;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-block:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.content-block img.about-image {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-block p {
+    flex: 1;
+    text-align: left;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Estilo para la lista de valores con iconos */
+.values-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.values-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: #333;
+    padding: 1rem;
+    background-color: #F9F8F3;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.values-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.values-list img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.values-list strong {
+    color: #D4A373;
+    font-weight: bold;
+}
+
+/* Icono decorativo para cada sección */
+.sobre-nosotros .icon {
+    font-size: 2.5rem;
+    color: #D4A373;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Ajustes de texto y alineación */
+.sobre-nosotros h2, .sobre-nosotros h3, .values-list li {
+    text-align: center;
+}
+
+.values-list p {
+    margin: 0;
+}
+
+.portafolio-section .slider img {
+    width: 100%;
+    height: 700px; /* Ajusta esta altura según el tamaño que prefieras */
+    object-fit: cover; /* Esto asegura que la imagen mantenga su proporción y se recorte si es necesario */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
 
