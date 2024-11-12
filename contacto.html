@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Carpintería Profesional</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Encabezado con Navegación -->
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/logo.jpg" alt="Logo de Carpintería Profesional" class="logo">
+        </div>
+        <h1>Carpintería Profesional</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de Contacto -->
+    <section class="contacto">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes alguna pregunta o deseas más información? Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+        
+        <form action="https://formspree.io/f/manyjqbd" method="POST">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono">
+            
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+        
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/tuPagina" target="_blank"><img src="imagenes/icons8-facebook-nuevo.svg" alt="Facebook"></a>
+            <a href="https://wa.me/1234567890" target="_blank"><img src="imagenes/icons8-whatsapp.svg" alt="WhatsApp"></a>
+            <a href="mailto:contacto@tucorreo.com"><img src="imagenes/icons8-nuevo-post-24.png" alt="Correo"></a>
+        </div>
+        <p>&copy; 2023 Carpintería Profesional - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

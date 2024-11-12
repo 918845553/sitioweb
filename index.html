@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpintería Profesional</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Encabezado con Navegación -->
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/logo.jpg" alt="Logo de Carpintería Profesional" class="logo">
+        </div>
+        <h1>Carpintería Profesional</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Hero con Carrusel de Imágenes -->
+    <section class="hero">
+        <h2>Diseños Personalizados en Melamina y Madera</h2>
+        <p>Alta calidad y dedicación en cada proyecto de carpintería.</p>
+
+        <a href="contacto.html" class="boton-contacto">Contáctanos</a>
+        <div class="slider">
+            <img src="imagenes/cocina1.webp" class="slide" alt="Imagen 1">
+            <img src="imagenes/escritorios-melamina.jpg" class="slide" alt="Imagen 2">
+            <img src="imagenes/cocina.jpg" class="slide" alt="Imagen 3">
+        </div>
+    </section>
+
+    <section id="bienvenida">
+        <h2>Bienvenido a Nuestra Carpintería</h2>
+        <p>Ofrecemos diseño y fabricación de muebles personalizados con atención al detalle. Descubre cómo nuestros servicios pueden transformar tu espacio.</p>
+        
+        <!-- Contenedor de iconos de servicios -->
+        <div class="icons-container">
+            <div class="icon">
+                <img src="imagenes/cicina01.png" alt="Icono de Cocina">
+                <p>Cocinas</p>
+            </div>
+            <div class="icon">
+                <img src="imagenes/cleset01.jpg" alt="Icono de Closet">
+                <p>Closets</p>
+            </div>
+            <div class="icon">
+                <img src="imagenes/cocina1.webp" alt="Icono de Baño">
+                <p>Baños</p>
+            </div>
+        </div>
+    
+        <!-- Botón para ver más servicios -->
+        <a href="servicios.html" class="boton">Ver más Servicios</a>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <!-- Enlace a Facebook -->
+            <a href="https://www.facebook.com/tuPagina" target="_blank" aria-label="Facebook">
+                <img src="imagenes/icons8-facebook-nuevo.svg" alt="Facebook">
+            </a>
+            
+            <!-- Enlace a WhatsApp -->
+            <a href="https://wa.me/918845553" target="_blank" aria-label="WhatsApp">
+                <img src="imagenes/icons8-whatsapp.svg" alt="WhatsApp">
+            </a>
+            
+            <!-- Enlace a Correo Electrónico -->
+            <a href="mailto:gervertor@gmail.com" aria-label="Correo Electrónico">
+                <img src="imagenes/icons8-nuevo-post-24.png" alt="Correo">
+            </a>
+        </div>
+        
+        <p>&copy; 2023 Carpintería Profesional - Todos los derechos reservados</p>
+    </footer>
+    
+    
+
+    <!-- JavaScript para el Slider -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll(".slide");
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle("active", i === index);
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            setInterval(nextSlide, 5000); // Cambia cada 3 segundos
+            showSlide(currentSlide); // Muestra el primer slide al cargar la página
+        });
+    </script>
+</body>
+</html>

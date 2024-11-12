@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Carpintería Profesional</title>
+    <link rel="stylesheet" href="css/portafolio.css">
+    
+</head>
+<body>
+    <!-- Encabezado con Navegación -->
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/logo.jpg" alt="Logo de Carpintería Profesional" class="logo">
+        </div>
+        <h1>Carpintería Profesional</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="portafolio.html" class="active">Portafolio</a></li>
+                
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Portafolio -->
+    <section class="portafolio">
+        <h2>Nuestro Portafolio</h2>
+
+        <!-- Cocina Slider -->
+        <div class="portafolio-section">
+            <h3>Cocinas</h3>
+            <div class="slider" id="slider-cocina">
+                <div class="slide active"><img src="imagenes/cocina07.jpg" alt="Cocina 1"></div>
+                <div class="slide"><img src="imagenes/cocina.jpg" alt="Cocina 2"></div>
+                <div class="slide"><img src="imagenes/cocina1.webp" alt="Cocina 3"></div>
+                <div class="slide"><img src="imagenes/cocina03.jpg" alt="Cocina 4"></div>
+                <div class="slide"><img src="imagenes/cocina04.png" alt="Cocina 5"></div>
+                <div class="slide"><img src="imagenes/cocina05.jpg" alt="Cocina 6"></div>
+                <div class="slide"><img src="imagenes/cocina06.jpg" alt="Cocina 7"></div>
+                <button class="prev" onclick="prevSlide('slider-cocina')">&#10094;</button>
+                <button class="next" onclick="nextSlide('slider-cocina')">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Closet Slider -->
+        <div class="portafolio-section">
+            <h3>Closets</h3>
+            <div class="slider" id="slider-closet">
+                <div class="slide active"><img src="imagenes/cleset01.jpg" alt="Closet 1"></div>
+                <div class="slide"><img src="imagenes/closet02.jpg" alt="Closet 2"></div>
+                <div class="slide"><img src="imagenes/closet03.jpg" alt="Closet 3"></div>
+                <div class="slide"><img src="imagenes/closet04.jpg" alt="Closet 2"></div>
+                <div class="slide"><img src="imagenes/closet05.jpg" alt="Closet 3"></div>
+                <div class="slide"><img src="imagenes/closet06.jpg" alt="Closet 2"></div>
+                
+                <button class="prev" onclick="prevSlide('slider-closet')">&#10094;</button>
+                <button class="next" onclick="nextSlide('slider-closet')">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Puertas Slider -->
+        <div class="portafolio-section">
+            <h3>Puertas</h3>
+            <div class="slider" id="slider-puertas">
+                <div class="slide active"><img src="imagenes/puerta01.avif" alt="Puerta 1"></div>
+                <div class="slide"><img src="imagenes/puerta02.jpg" alt="Puerta 2"></div>
+                <div class="slide"><img src="imagenes/puerta03.jpg" alt="Puerta 3"></div>
+                <div class="slide"><img src="imagenes/puerta04.jpg" alt="Puerta 2"></div>
+                <div class="slide"><img src="imagenes/puerta05.jpg" alt="Puerta 3"></div>
+                <button class="prev" onclick="prevSlide('slider-puertas')">&#10094;</button>
+                <button class="next" onclick="nextSlide('slider-puertas')">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/tuPagina" target="_blank"><img src="imagenes/icons8-facebook-nuevo.svg" alt="Facebook"></a>
+            <a href="https://wa.me/1234567890" target="_blank"><img src="imagenes/icons8-whatsapp.svg" alt="WhatsApp"></a>
+            <a href="mailto:contacto@tucorreo.com"><img src="imagenes/icons8-nuevo-post-24.png" alt="Correo"></a>
+        </div>
+        <p>&copy; 2023 Carpintería Profesional - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- JavaScript para el Slider -->
+    <script>
+        function showSlide(sliderId, index) {
+            const slides = document.querySelectorAll(`#${sliderId} .slide`);
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? "block" : "none";
+            });
+        }
+
+        function nextSlide(sliderId) {
+            const slides = document.querySelectorAll(`#${sliderId} .slide`);
+            let currentIndex = Array.from(slides).findIndex(slide => slide.style.display === "block");
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(sliderId, currentIndex);
+        }
+
+        function prevSlide(sliderId) {
+            const slides = document.querySelectorAll(`#${sliderId} .slide`);
+            let currentIndex = Array.from(slides).findIndex(slide => slide.style.display === "block");
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(sliderId, currentIndex);
+        }
+
+        // Initialize sliders
+        document.addEventListener("DOMContentLoaded", () => {
+            showSlide("slider-cocina", 0);
+            showSlide("slider-closet", 0);
+            showSlide("slider-puertas", 0);
+        });
+    </script>
+</body>
+</html>
+
